@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+   function cuadrado_callback(value, callback) {
+    setTimeout(() => {
+     callback(value, value * value);
+    }, 0 | (Math.random() * 100));
+   }
+
+   cuadrado_callback(1, (value, result) => {
+    console.log("inicia callback");
+    console.log(`callback ${value}, ${result}`);
+
+    cuadrado_callback(2, (value, result) => {
+     console.log("inicia callback");
+     console.log(`callback ${value}, ${result}`);
+
+     cuadrado_callback(3, (value, result) => {
+      console.log("inicia callback");
+      console.log(`callback ${value}, ${result}`);
+
+      cuadrado_callback(4, (value, result) => {
+       console.log("inicia callback");
+       console.log(`callback ${value}, ${result}`);
+
+       cuadrado_callback(5, (value, result) => {
+        console.log("inicia callback");
+        console.log(`callback ${value}, ${result}`);
+
+        cuadrado_callback(6, (value, result) => {
+         console.log("inicia callback");
+         console.log(`callback ${value}, ${result}`);
+									
+        });
+       });
+      });
+     });
+    });
+   });
+  </script>
+ </body>
+</html>
